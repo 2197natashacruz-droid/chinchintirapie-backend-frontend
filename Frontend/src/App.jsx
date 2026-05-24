@@ -2,7 +2,7 @@ import { lazy, Suspense, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
-import { Cronicas, Repositorio, MaterialEducativo } from './pages/OtherPages.jsx'
+
 import { AuthProvider } from './context/AuthContext'
 import './styles/global.css'
 
@@ -15,6 +15,17 @@ const CEDOC           = lazy(() => import('./pages/CEDOC.jsx'))
 const Contacto        = lazy(() => import('./pages/Contacto.jsx'))
 const Tienda          = lazy(() => import('./pages/Tienda.jsx'))
 const Login           = lazy(() => import('./pages/Login.jsx'))
+
+const Cronicas        = lazy(() => import('./pages/Cronicas.jsx'))
+const Repositorio     = lazy(() => import('./pages/Repositorio.jsx'))
+const MaterialEducativo = lazy(() => import('./pages/MaterialEducativo.jsx'))
+
+const NoticiaDetail           = lazy(() => import('./pages/NoticiaDetail.jsx'))
+const CronicaDetail           = lazy(() => import('./pages/CronicaDetail.jsx'))
+const RepositorioDetail       = lazy(() => import('./pages/RepositorioDetail.jsx'))
+const CEDOCDetail             = lazy(() => import('./pages/CEDOCDetail.jsx'))
+const MaterialEducativoDetail = lazy(() => import('./pages/MaterialEducativoDetail.jsx'))
+
 
 function PageLoader() {
   return (
@@ -57,6 +68,12 @@ function Layout() {
           <Route path="/contacto"           element={<Contacto />} />
           <Route path="/tienda"             element={<Tienda />} />
           <Route path="/login"              element={<Login />} />
+
+          <Route path="/noticias/:id"       element={<NoticiaDetail />} />
+          <Route path="/cronicas/:id"       element={<CronicaDetail />} />
+          <Route path="/repositorio/:id"    element={<RepositorioDetail />} />
+          <Route path="/cedoc/:id"          element={<CEDOCDetail />} />
+          <Route path="/material-educativo/:id" element={<MaterialEducativoDetail />} />
           <Route path="*" element={
             <div style={{ textAlign: 'center', padding: '6rem 2rem' }}>
               <div style={{ fontSize: '5rem' }}>🎭</div>

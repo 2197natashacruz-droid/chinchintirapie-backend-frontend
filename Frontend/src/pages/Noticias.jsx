@@ -1,40 +1,8 @@
 import { useState } from 'react';
 import Ticker from '../components/Ticker';
 
-const NEWS_ITEMS = [
-  {
-    img: '/img/img1.webp',
-    category: 'DESTACADO',
-    title: 'Homenaje Popular en las Calles',
-    desc: 'Registro audiovisual de la intervención artística realizada por la comunidad carnavalera.',
-    featured: true,
-  },
-  {
-    img: '/img/img6.webp',
-    category: 'CARNAVAL',
-    title: 'Conmemoración Hermanos Vergara Toledo',
-    desc: 'Jornada cultural comunitaria con música y danza popular.',
-  },
-  {
-    img: '/img/img3.webp',
-    category: 'TALLERES',
-    title: 'Nuevos talleres abiertos a la comunidad',
-    desc: 'Espacios de formación artística para niñas, niños y adultos.',
-  },
-  {
-    video: '/Video Project.mp4',
-    category: 'AUDIOVISUAL',
-    title: 'Ensayo nocturno de comparsa',
-    desc: 'Video documental del proceso de ensayo.',
-    featured: true,
-  },
-  {
-    img: '/img/img4.webp',
-    category: 'ARCHIVO',
-    title: 'Recuperación de registros históricos',
-    desc: 'Material audiovisual comunitario incorporado al repositorio.',
-  },
-];
+import { Link } from 'react-router-dom';
+import { NEWS_ITEMS } from '../data/noticiasData';
 
 const CAROUSEL_SLIDES = [
   { src: '/img/img1.webp', caption: 'Homenaje Victor Jara' },
@@ -156,14 +124,16 @@ export default function Noticias() {
                 </span>
                 <h3 style={{ fontFamily: 'Boogaloo, cursive', fontSize: '1.2rem', color: 'var(--oscuro)', marginBottom: '.3rem' }}>{item.title}</h3>
                 {item.desc && <p style={{ color: '#5a3e2b', fontSize: '.88rem', lineHeight: 1.5, marginBottom: '.8rem' }}>{item.desc}</p>}
-                <button style={{
-                  background: 'var(--morado-o)', color: 'var(--amarillo-e)',
-                  border: 'none', borderRadius: 8, padding: '.4rem 1rem',
-                  fontFamily: 'Nunito, sans-serif', fontWeight: 800, cursor: 'pointer',
-                  fontSize: '.85rem',
-                }}>
-                  Ver noticia
-                </button>
+                <Link to={`/noticias/${item.id}`} style={{ textDecoration: 'none' }}>
+                  <button style={{
+                    background: 'var(--morado-o)', color: 'var(--amarillo-e)',
+                    border: 'none', borderRadius: 8, padding: '.4rem 1rem',
+                    fontFamily: 'Nunito, sans-serif', fontWeight: 800, cursor: 'pointer',
+                    fontSize: '.85rem', width: '100%'
+                  }}>
+                    Ver noticia
+                  </button>
+                </Link>
               </div>
             </article>
           ))}
