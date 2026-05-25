@@ -29,16 +29,7 @@ const MaterialEducativoDetail = lazy(() => import('./pages/MaterialEducativoDeta
 
 function PageLoader() {
   return (
-    <div style={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      minHeight: '60vh',
-      fontFamily: 'Bangers, cursive',
-      fontSize: '2rem',
-      letterSpacing: 3,
-      color: 'var(--purpura)',
-    }}>
+    <div className="page-loader">
       🥁 Cargando...
     </div>
   )
@@ -75,14 +66,10 @@ function Layout() {
           <Route path="/cedoc/:id"          element={<CEDOCDetail />} />
           <Route path="/material-educativo/:id" element={<MaterialEducativoDetail />} />
           <Route path="*" element={
-            <div style={{ textAlign: 'center', padding: '6rem 2rem' }}>
-              <div style={{ fontSize: '5rem' }}>🎭</div>
-              <h1 style={{ fontFamily: 'Bangers, cursive', fontSize: '3rem', letterSpacing: 3 }}>
-                Página no encontrada
-              </h1>
-              <p style={{ color: '#5a3e2b', margin: '1rem 0 2rem' }}>
-                Parece que esta calle no lleva al carnaval.
-              </p>
+            <div className="page-empty-state">
+              <div className="page-empty-state-icon">🎭</div>
+              <h1 className="page-empty-state-title">Página no encontrada</h1>
+              <p className="page-empty-state-text">Parece que esta calle no lleva al carnaval.</p>
               <a href="/" className="btn btn-primary">← Volver al inicio</a>
             </div>
           } />

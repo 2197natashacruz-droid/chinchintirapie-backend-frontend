@@ -13,8 +13,7 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-size: cover;
-  background-position: center;
+  background: linear-gradient(to right, rgba(190,0,60,.85) 0%, rgba(190,0,60,.45) 50%, rgba(190,0,60,.05) 100%), url('/img/chinchintirapie-banner-index.webp') center/cover no-repeat;
 }
 
 .hero-bg::after {
@@ -80,7 +79,9 @@
   margin-bottom: 1.2rem;
 }
 
-.hero-title em {
+.hero-highlight {
+  color: var(--naranja);
+  font-style: italic;
   white-space: nowrap;  /* ← evita que "20 años" se separe de "de Carnaval" */
 }
 
@@ -307,6 +308,27 @@
   padding: 5rem 2rem;
   position: relative;
   overflow: hidden;
+}
+
+.section-header-white h2 {
+  color: #fff;
+}
+
+.section-header-white h2 span {
+  color: var(--amarillo);
+}
+
+.talleres-heading {
+  margin-bottom: 0.6rem;
+}
+
+.taller-card-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 1.5rem;
+  display: block;
 }
 
 .talleres-section::before {
