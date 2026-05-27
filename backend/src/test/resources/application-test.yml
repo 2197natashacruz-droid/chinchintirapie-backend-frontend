@@ -14,7 +14,7 @@ spring:
       enabled: false
 
 jwt:
-  secret: testSecretKeyForCiOnlyWithoutAnyDashes32chars
+  secret: dGVzdHNlY3JldGtleWZvcmNpb25seTMyY2hhcnMhIQ==
   expiration: 3600000
 
 app:
