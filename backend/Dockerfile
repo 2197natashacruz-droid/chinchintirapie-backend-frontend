@@ -17,7 +17,7 @@ RUN ./mvnw dependency:go-offline
 COPY src ./src
 
 # Compilar el proyecto sin tests
-RUN ./mvnw package -DskipTests
+RUN ./mvnw package -Dmaven.test.skip=true
 
 
 # Etapa 2: Imagen final ligera
