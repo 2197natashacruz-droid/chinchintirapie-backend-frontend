@@ -14,7 +14,7 @@ spring:
       enabled: false
 
 jwt:
-  secret: test-secret-key-for-ci-only-32chars!!
+  secret: testSecretKeyForCiOnlyWithoutAnyDashes32chars
   expiration: 3600000
 
 app:
