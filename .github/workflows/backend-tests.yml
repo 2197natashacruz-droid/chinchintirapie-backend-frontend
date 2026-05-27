@@ -2,13 +2,14 @@ name: Backend CI Tests
 
 on:
   push:
-    paths:
-      - 'backend/**'
-      - '.github/workflows/backend-tests.yml'
+    branches:
+      - main
+      - master # Añade las ramas que uses para asegurar el tiro
   pull_request:
-    paths:
-      - 'backend/**'
-  workflow_dispatch:
+    branches:
+      - main
+      - master
+  workflow_dispatch: # Mantiene activo tu botón manual en la web de GitHub
 
 jobs:
   backend-tests:
