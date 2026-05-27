@@ -14,7 +14,7 @@ spring:
       enabled: false
 
 jwt:
-  secret: dGVzdHNlY3JldGtleWZvcmNpb25seTMyY2hhcnMhIQ==
+  secret: claveSecretaDePruebaSuperSeguraYAlfanumericaParaElBootcamp2026
   expiration: 3600000
 
 app:
