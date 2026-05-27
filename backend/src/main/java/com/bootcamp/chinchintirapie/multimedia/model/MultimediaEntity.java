@@ -29,6 +29,7 @@ public class MultimediaEntity {
 
     private String description;
 
+    @Column(name = "release_year")
     private String year;
 
     @Enumerated(EnumType.STRING)
