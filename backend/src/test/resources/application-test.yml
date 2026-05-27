@@ -1,18 +1,21 @@
 spring:
   datasource:
-    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:mem:testdb;MODE=PostgreSQL;DB_CLOSE_DELAY=-1
     driver-class-name: org.h2.Driver
     username: sa
-    password: 
+    password:
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
       ddl-auto: create-drop
-    show-sql: false
-  sql:
-    init:
-      mode: never
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+  h2:
+    console:
+      enabled: false
 
 jwt:
-  secret: test-secret
+  secret: claveSecretaDePruebaSuperSeguraYAlfanumericaParaElBootcamp2026
   expiration: 3600000
+
+app:
+  url: http://localhost:8080

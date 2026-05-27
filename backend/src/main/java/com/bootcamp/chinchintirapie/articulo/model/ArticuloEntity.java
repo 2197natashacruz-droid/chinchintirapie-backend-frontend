@@ -1,5 +1,5 @@
 package com.bootcamp.chinchintirapie.articulo.model;
-
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.bootcamp.chinchintirapie.user.model.UserEntity;
 import jakarta.persistence.*;
 import lombok.*;
@@ -40,8 +40,9 @@ public class ArticuloEntity {
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "author_id", nullable = false)
+    @JsonIgnoreProperties({"articulos", "tasks", "multimedia", "password"})
     private UserEntity uploadedBy;
 
     @PrePersist
