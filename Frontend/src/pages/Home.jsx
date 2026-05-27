@@ -61,15 +61,13 @@ export default function Home() {
 
         {/* HERO */}
         <section className="hero" id="inicio">
-          <div className="hero-bg" style={{
-            background: `linear-gradient(to right, rgba(190,0,60,.85) 0%, rgba(190,0,60,.45) 50%, rgba(190,0,60,.05) 100%), url('/img/chinchintirapie-banner-index.webp') center/cover no-repeat`,
-          }} />
+          <div className="hero-bg" />
           <div className="hero-content">
-            <div className="hero-badge" style={{ color: '#000', fontSize: '1.6rem', padding: '.5rem 1.5rem' }}>
+            <div className="hero-badge">
               · Escuela Carnavalera Chinchintirapié ·
             </div>
             <h1 className="hero-title">
-              <em style={{ color: 'var(--naranja)', fontStyle: 'italic' }}>20 años </em>de Carnaval
+              <em className="hero-highlight">20 años </em>de Carnaval
               <br />y educación popular
             </h1>
             <p className="hero-sub">
@@ -147,26 +145,15 @@ export default function Home() {
 
         {/* TALLERES */}
         <section className="talleres-section" id="talleres">
-          <div className="section-header reveal">
-            <h2 style={{ color: '#fff' }}>Nuestros <span style={{ color: 'var(--amarillo)' }}>Talleres</span></h2>
+          <div className="section-header reveal section-header-white">
+            <h2 className="talleres-heading">Nuestros <span>Talleres</span></h2>
             <div className="deco-line"><span>🥁</span></div>
             <p>Tres disciplinas que forman el corazón de la escuela carnavalera.</p>
           </div>
           <div className="talleres-grid">
             {TALLERES.map(({ img, title, desc }) => (
                 <div className="taller-card reveal" key={title}>
-                  <img
-                      src={img}
-                      alt={title}
-                      style={{
-                        width: '100%',
-                        height: '220px',
-                        objectFit: 'cover',
-                        borderRadius: '16px',
-                        marginBottom: '1.5rem',
-                        display: 'block',
-                      }}
-                  />
+                  <img src={img} alt={title} className="taller-card-img" />
                   <h3>{title}</h3>
                   <p>{desc}</p>
                 </div>
