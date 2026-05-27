@@ -7,14 +7,15 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.H2Dialect
     show-sql: true
   h2:
     console:
       enabled: false
 
 jwt:
-  secret: ${JWT_SECRET}
+  secret: test-secret-key-for-ci-only-32chars!!
   expiration: 3600000
 
 app:
-  url: ${APP_URL}
+  url: http://localhost:8080
